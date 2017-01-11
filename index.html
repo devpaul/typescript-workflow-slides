@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>TypeScript Development Workflow</title>
+
+    <meta name="description" content="TypeScript Development Workflow">
+    <meta name="author" content="Paul Shannon">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/css/theme/sky.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="resources/main.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'bower_components/reveal.js/css/print/pdf.css' : 'bower_components/reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section class="full">
+            <h1>TypeScript Workflow</h1>
+        </section>
+
+        <section>
+            <h3>What are workflows?</h3>
+
+            <p class="fragment">Workflows are the tools processes people use to move a feature from inception
+                to reality</p>
+        </section>
+
+		<section>
+			<h3>Project Workflow</h3>
+
+			<ul>
+				<li>Conception</li>
+				<li>Design</li>
+				<li>Breakdown & Estimation</li>
+				<li>Setup</li>
+				<li><b>Development</b></li>
+				<li>Test</li>
+				<li>Deployment</li>
+				<li>Support</li>
+			</ul>
+
+			<aside class="notes">
+				We like to think of these as phases, rather they should be considered barriers to release
+			</aside>
+		</section>
+
+        <section>
+            <h2>Development Workflow</h2>
+        </section>
+
+		<section>
+			<p>Software engineers want to release software and features</p>
+
+			<ul>
+				<li>better</li>
+				<li>faster</li>
+				<li>with more confidence</li>
+			</ul>
+		</section>
+
+		<section>
+			<h3>TypeScript Tools</h3>
+
+			<img src="images/drinkingbird.gif">
+		</section>
+
+        <section>
+            <h3>IDE</h3>
+
+			<p>A good IDE integrates with your development workflow allowing you to work quicker and more efficiently</p>
+        </section>
+
+		<section>
+			<p>Traits of a good IDE</p>
+
+			<ul>
+				<li>type hinting</li>
+				<li>completion</li>
+				<li>linting</li>
+				<li>tool integration</li>
+			</ul>
+			<aside class="notes">
+				DEMO: Show example w/ webserv
+			</aside>
+		</section>
+
+		<section>
+			<h3>Scaffolding/Boilerplate</h3>
+
+			Boilerplate helps avoid bottlenecks that occur during the setup stage
+
+			<aside class="notes">
+				<ul>
+					<li>Comes from repo or cli</li>
+					<li>includes common linting, build, setup</li>
+					<li>DEMO: show <a href="https://github.com/devpaul/ts-dojo-boilerplate">dojo-ts-boilerplate</a></li>
+					<li><a href="https://github.com/devpaul/ts-dojo-aframe-boilerplate">aframe boilerplate</a></li>
+					<li><a href="https://github.com/devpaul/ts-dojo-electron-boilerplate">electron boilerplate</a></li>
+				</ul>
+			</aside>
+		</section>
+
+        <section>
+			<h3>Code Style</h3>
+
+			<p>A consistent code style makes code eaier to read, more maintainable, and helps avoid common errors</p>
+
+			<ul>
+				<li class="fragment"><a href="http://editorconfig.org/">editorconfig</a></li>
+				<li class="fragment"><a href="https://palantir.github.io/tslint/rules/">tslint</a></li>
+				<li class="fragment"><a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">tsconfig.json</a></li>
+			</ul>
+			<aside class="notes">
+				Show various code style configuration options
+			</aside>
+        </section>
+
+		<section>
+			<h3>Build tools</h3>
+
+			<p>Build tools let engineers share build processes and configuration</p>
+
+			<ul class="fragment">
+				<li><a href="http://gruntjs.com/">Grunt</a></li>
+				<li><a href="http://documentup.com/shelljs/shelljs">shelljs</a></li>
+			</ul>
+			<aside class="notes">
+				<ul>
+					<li>run from the command line</li>
+					<li>for developers and CI</li>
+				</ul>
+			</aside>
+		</section>
+
+		<section>
+			<h3>Testing</h3>
+
+			Automated testing ensures that changes do not create undesired side effects
+		</section>
+
+		<section>
+			<h3>Intern</h3>
+
+			<p>Intern is an all-in-one solution for testing</p>
+
+			<ul>
+				<li class="fragment">Unit tests</li>
+				<li class="fragment">Functional tests</li>
+				<li class="fragment">Tests against real browsers</li>
+				<li class="fragment">Code coverage analysis</li>
+				<li class="fragment">Benchmarking</li>
+				<li class="fragment">Accessibility testing</li>
+				<li class="fragment">Visual regression testing</li>
+			</ul>
+			<aside class="notes">
+				<ul>
+					<li>No need to setup karma, mocha, chai, + plugins</li>
+					<li>Jest & others don't test against browsers they use jsdom in node</li>
+				</ul>
+			</aside>
+		</section>
+
+		<section>
+			<h2>Development Paradigms</h2>
+		</section>
+
+		<section>
+			<h3>Building & Distributing</h3>
+
+			<ul>
+				<li>Build into a separate build folder</li>
+				<li>Avoid separate build and release scripts</li>
+			</ul>
+
+			<aside class="notes">
+				Benefit: easy to clean and compartmentalize
+				Show how we distribute apps. Where we build to and their structure
+			</aside>
+		</section>
+
+		<section>
+			<h3>Test Builds</h3>
+
+			<ul>
+				<li>Build your application and tests as separate build steps</li>
+				<li>Build tests against your distribution</li>
+			</ul>
+			<aside class="notes">
+				<ul>
+					<li>DEMO: Show webserv 2-stage build & test</li>
+					<li>This has resulted in me catching a ton of type errors</li>
+					<li>A little faster to build</li>
+				</ul>
+			</aside>
+		</section>
+
+		<section>
+			<h3>.d.ts Files</h3>
+
+			<p>The TypeScript compiler does not automatically copy .d.ts files during a build.</p>
+
+			<ul class="fragment">
+				<li class="notes">Copy over .d.ts files manually</li>
+				<li class="notes">Rename them to .ts</li>
+			</ul>
+
+			<div class="speaker-notes">
+				<ul>
+					<li>show webserv's Handler.js</li>
+				</ul>
+			</div>
+		</section>
+
+		<section>
+			<h3>Mock Server</h3>
+
+			<p>A basic web server that can serve up content or proxy to another server to support client development</p>
+
+			<div class="speaker-notes">
+				<div>Common tools</div>
+				<ul>
+					<li>Roll your own -- connect/express + http-proxy + plugins</li>
+					<li>Charles Proxy</li>
+					<li>Other tools?</li>
+				</ul>
+			</div>
+		</section>
+
+		<section>
+			<h2>General Tools</h2>
+
+			<ul>
+				<li>Communication (<a href="">Slack</a>)</li>
+				<li>Version control (<a href="">git</a>)</li>
+				<li>Code review (<a href="">GitHub</a>)</li>
+				<li>Continuous Integration (<a href="">travis</a>)</li>
+				<li>Artifact repository (<a href="">npm</a>)</li>
+				<li>CSS preprocessor (<a href="">stylus</a>)</li>
+				<li>Module format/bundler (<a href="">AMD</a>, <a href="">Webpack</a>)</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Questions?</h2>
+		</section>
+    </div>
+</div>
+
+<script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+<script src="bower_components/reveal.js/js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        width: '100%',
+        height: '100%',
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: 'bower_components/reveal.js/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function () {
+                return !!document.querySelector('pre code');
+            }, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true},
+            {src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
