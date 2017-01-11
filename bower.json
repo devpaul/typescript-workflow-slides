@@ -1,0 +1,24 @@
+{
+  "name": "presentation-aframe",
+  "version": "0.0.0",
+  "authors": [
+    "Paul Shannon <pshannon@sitepen.com>"
+  ],
+  "description": "A presentation on A-frame and WebVR",
+  "main": "index.html",
+  "keywords": [
+    "presentation", "aframe", "WebVR"
+  ],
+  "license": "CC 3.0",
+  "homepage": "http://github.com/devpaul",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~3.3.0"
+  }
+}
